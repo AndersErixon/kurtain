@@ -1,0 +1,45 @@
+<html>
+	<head>
+		{% if title %}
+			<title>{{ title }} - Kurtain</title>
+		{% else %}
+			<title>Welcome to Kurtain!</title>
+		{% endif %}
+		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/base.css') }}">
+	</head>
+	<body>
+		<table width="100%" border="0">
+		<tr><td class="menu">
+			<a href="{{ url_for('index') }}">Home</a> |
+			<a href="{{ url_for('explore') }}">Explore</a> |
+			<a href="#">Asd</a>
+		</td><td width="200px" align="right">
+			<div class="dropdown">
+				<button class="dropbtn">Menu</button>
+				<div class="dropdown-content">
+					{% if current_user.is_anonymous %}
+       					<a href="{{ url_for('login') }}">Login</a><br>
+					<a href="{{ url_for('register') }}">Register</a>
+					{% else %}
+					<a href="{{ url_for('user', username=current_user.username) }}">Profile</a>
+					<a href="{{ url_for('logout') }}">Logout</a>
+					{% endif %}
+				</div
+			</div>
+		</td></tr>
+		</table>
+		<hr>
+
+		{% with messages = get_flashed_messages() %}
+		{%if messages %}
+		<ul>
+			{%for message in messages %}
+			<li>{{ message }}</li>
+			{% endfor %}
+		</ul>
+		{% endif %}
+		{% endwith %}
+
+		{% block content %}{% endblock %}
+	</body>
+</html>
