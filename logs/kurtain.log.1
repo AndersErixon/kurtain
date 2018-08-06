@@ -1,4 +1,13 @@
-2018-08-05 19:21:12,817 Exception on /explore [GET] [in c:\users\kurt\appdata\local\programs\python\python37\lib\site-packages\flask\app.py:1761]
+2018-08-06 19:10:15,886 Exception on /index [GET] [in c:\users\kurt\appdata\local\programs\python\python37\lib\site-packages\flask\app.py:1761]
+Traceback (most recent call last):
+  File "c:\users\kurt\appdata\local\programs\python\python37\lib\site-packages\sqlalchemy\engine\base.py", line 1193, in _execute_context
+    context)
+  File "c:\users\kurt\appdata\local\programs\python\python37\lib\site-packages\sqlalchemy\engine\default.py", line 509, in do_execute
+    cursor.execute(statement, parameters)
+sqlite3.OperationalError: no such table: user
+
+The above exception was the direct cause of the following exception:
+
 Traceback (most recent call last):
   File "c:\users\kurt\appdata\local\programs\python\python37\lib\site-packages\flask\app.py", line 2292, in wsgi_app
     response = self.full_dispatch_request()
@@ -8,110 +17,56 @@ Traceback (most recent call last):
     reraise(exc_type, exc_value, tb)
   File "c:\users\kurt\appdata\local\programs\python\python37\lib\site-packages\flask\_compat.py", line 35, in reraise
     raise value
-  File "c:\users\kurt\appdata\local\programs\python\python37\lib\site-packages\flask\app.py", line 1813, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "c:\users\kurt\appdata\local\programs\python\python37\lib\site-packages\flask\app.py", line 1799, in dispatch_request
-    return self.view_functions[rule.endpoint](**req.view_args)
-  File "c:\users\kurt\appdata\local\programs\python\python37\lib\site-packages\flask_login\utils.py", line 261, in decorated_view
-    return func(*args, **kwargs)
-  File "C:\Users\kurt\Python\kurtain\kurtain\routes.py", line 123, in explore
-    posts = Post.query.order_by(Post.timestamp.desc()).paginate(page, kurtain.config['POSTS_PER_PAGE'], False)
-NameError: name 'page' is not defined
-2018-08-05 19:26:28,038 Kurtain Startup [in C:\Users\kurt\Python\kurtain\kurtain\__init__.py:42]
-2018-08-05 19:26:36,194 Exception on /index [GET] [in c:\users\kurt\appdata\local\programs\python\python37\lib\site-packages\flask\app.py:1761]
-Traceback (most recent call last):
-  File "c:\users\kurt\appdata\local\programs\python\python37\lib\site-packages\flask\app.py", line 2292, in wsgi_app
-    response = self.full_dispatch_request()
-  File "c:\users\kurt\appdata\local\programs\python\python37\lib\site-packages\flask\app.py", line 1815, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "c:\users\kurt\appdata\local\programs\python\python37\lib\site-packages\flask\app.py", line 1718, in handle_user_exception
-    reraise(exc_type, exc_value, tb)
-  File "c:\users\kurt\appdata\local\programs\python\python37\lib\site-packages\flask\_compat.py", line 35, in reraise
-    raise value
-  File "c:\users\kurt\appdata\local\programs\python\python37\lib\site-packages\flask\app.py", line 1813, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "c:\users\kurt\appdata\local\programs\python\python37\lib\site-packages\flask\app.py", line 1799, in dispatch_request
-    return self.view_functions[rule.endpoint](**req.view_args)
-  File "c:\users\kurt\appdata\local\programs\python\python37\lib\site-packages\flask_login\utils.py", line 261, in decorated_view
-    return func(*args, **kwargs)
-  File "C:\Users\kurt\Python\kurtain\kurtain\routes.py", line 20, in index
-    posts = current_user.followed_posts().paginate(page, kurtain.config['POSTS_PER_PAGE'], False)
-NameError: name 'page' is not defined
-2018-08-05 19:26:42,770 Exception on /explore [GET] [in c:\users\kurt\appdata\local\programs\python\python37\lib\site-packages\flask\app.py:1761]
-Traceback (most recent call last):
-  File "c:\users\kurt\appdata\local\programs\python\python37\lib\site-packages\flask\app.py", line 2292, in wsgi_app
-    response = self.full_dispatch_request()
-  File "c:\users\kurt\appdata\local\programs\python\python37\lib\site-packages\flask\app.py", line 1815, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "c:\users\kurt\appdata\local\programs\python\python37\lib\site-packages\flask\app.py", line 1718, in handle_user_exception
-    reraise(exc_type, exc_value, tb)
-  File "c:\users\kurt\appdata\local\programs\python\python37\lib\site-packages\flask\_compat.py", line 35, in reraise
-    raise value
-  File "c:\users\kurt\appdata\local\programs\python\python37\lib\site-packages\flask\app.py", line 1813, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "c:\users\kurt\appdata\local\programs\python\python37\lib\site-packages\flask\app.py", line 1799, in dispatch_request
-    return self.view_functions[rule.endpoint](**req.view_args)
-  File "c:\users\kurt\appdata\local\programs\python\python37\lib\site-packages\flask_login\utils.py", line 261, in decorated_view
-    return func(*args, **kwargs)
-  File "C:\Users\kurt\Python\kurtain\kurtain\routes.py", line 123, in explore
-    posts = Post.query.order_by(Post.timestamp.desc()).paginate(page, kurtain.config['POSTS_PER_PAGE'], False)
-NameError: name 'page' is not defined
-2018-08-05 19:29:14,734 Kurtain Startup [in C:\Users\kurt\Python\kurtain\kurtain\__init__.py:42]
-2018-08-05 19:29:17,779 Exception on /explore [GET] [in c:\users\kurt\appdata\local\programs\python\python37\lib\site-packages\flask\app.py:1761]
-Traceback (most recent call last):
-  File "c:\users\kurt\appdata\local\programs\python\python37\lib\site-packages\flask\app.py", line 2292, in wsgi_app
-    response = self.full_dispatch_request()
-  File "c:\users\kurt\appdata\local\programs\python\python37\lib\site-packages\flask\app.py", line 1815, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "c:\users\kurt\appdata\local\programs\python\python37\lib\site-packages\flask\app.py", line 1718, in handle_user_exception
-    reraise(exc_type, exc_value, tb)
-  File "c:\users\kurt\appdata\local\programs\python\python37\lib\site-packages\flask\_compat.py", line 35, in reraise
-    raise value
-  File "c:\users\kurt\appdata\local\programs\python\python37\lib\site-packages\flask\app.py", line 1813, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "c:\users\kurt\appdata\local\programs\python\python37\lib\site-packages\flask\app.py", line 1799, in dispatch_request
-    return self.view_functions[rule.endpoint](**req.view_args)
-  File "c:\users\kurt\appdata\local\programs\python\python37\lib\site-packages\flask_login\utils.py", line 261, in decorated_view
-    return func(*args, **kwargs)
-  File "C:\Users\kurt\Python\kurtain\kurtain\routes.py", line 124, in explore
-    posts = Post.query.order_by(Post.timestamp.desc()).paginate(page, kurtain.config['POSTS_PER_PAGE'], False)
-NameError: name 'page' is not defined
-2018-08-05 19:29:43,279 Kurtain Startup [in C:\Users\kurt\Python\kurtain\kurtain\__init__.py:42]
-2018-08-05 19:29:46,120 Exception on /explore [GET] [in c:\users\kurt\appdata\local\programs\python\python37\lib\site-packages\flask\app.py:1761]
-Traceback (most recent call last):
-  File "c:\users\kurt\appdata\local\programs\python\python37\lib\site-packages\flask\app.py", line 2292, in wsgi_app
-    response = self.full_dispatch_request()
-  File "c:\users\kurt\appdata\local\programs\python\python37\lib\site-packages\flask\app.py", line 1815, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "c:\users\kurt\appdata\local\programs\python\python37\lib\site-packages\flask\app.py", line 1718, in handle_user_exception
-    reraise(exc_type, exc_value, tb)
-  File "c:\users\kurt\appdata\local\programs\python\python37\lib\site-packages\flask\_compat.py", line 35, in reraise
-    raise value
-  File "c:\users\kurt\appdata\local\programs\python\python37\lib\site-packages\flask\app.py", line 1813, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "c:\users\kurt\appdata\local\programs\python\python37\lib\site-packages\flask\app.py", line 1799, in dispatch_request
-    return self.view_functions[rule.endpoint](**req.view_args)
-  File "c:\users\kurt\appdata\local\programs\python\python37\lib\site-packages\flask_login\utils.py", line 261, in decorated_view
-    return func(*args, **kwargs)
-  File "C:\Users\kurt\Python\kurtain\kurtain\routes.py", line 126, in explore
-    return render_template('index.html', title='Explore', posts=posts)
-  File "c:\users\kurt\appdata\local\programs\python\python37\lib\site-packages\flask\templating.py", line 135, in render_template
-    context, ctx.app)
-  File "c:\users\kurt\appdata\local\programs\python\python37\lib\site-packages\flask\templating.py", line 117, in _render
-    rv = template.render(context)
-  File "c:\users\kurt\appdata\local\programs\python\python37\lib\site-packages\jinja2\asyncsupport.py", line 76, in render
-    return original_render(self, *args, **kwargs)
-  File "c:\users\kurt\appdata\local\programs\python\python37\lib\site-packages\jinja2\environment.py", line 1008, in render
-    return self.environment.handle_exception(exc_info, True)
-  File "c:\users\kurt\appdata\local\programs\python\python37\lib\site-packages\jinja2\environment.py", line 780, in handle_exception
-    reraise(exc_type, exc_value, tb)
-  File "c:\users\kurt\appdata\local\programs\python\python37\lib\site-packages\jinja2\_compat.py", line 37, in reraise
+  File "c:\users\kurt\appdata\local\programs\python\python37\lib\site-packages\flask\app.py", line 1811, in full_dispatch_request
+    rv = self.preprocess_request()
+  File "c:\users\kurt\appdata\local\programs\python\python37\lib\site-packages\flask\app.py", line 2087, in preprocess_request
+    rv = func()
+  File "C:\Users\kurt\Python\kurtain\kurtain\routes.py", line 74, in before_request
+    if current_user.is_authenticated:
+  File "c:\users\kurt\appdata\local\programs\python\python37\lib\site-packages\werkzeug\local.py", line 347, in __getattr__
+    return getattr(self._get_current_object(), name)
+  File "c:\users\kurt\appdata\local\programs\python\python37\lib\site-packages\werkzeug\local.py", line 306, in _get_current_object
+    return self.__local()
+  File "c:\users\kurt\appdata\local\programs\python\python37\lib\site-packages\flask_login\utils.py", line 26, in <lambda>
+    current_user = LocalProxy(lambda: _get_user())
+  File "c:\users\kurt\appdata\local\programs\python\python37\lib\site-packages\flask_login\utils.py", line 335, in _get_user
+    current_app.login_manager._load_user()
+  File "c:\users\kurt\appdata\local\programs\python\python37\lib\site-packages\flask_login\login_manager.py", line 359, in _load_user
+    return self.reload_user()
+  File "c:\users\kurt\appdata\local\programs\python\python37\lib\site-packages\flask_login\login_manager.py", line 321, in reload_user
+    user = self.user_callback(user_id)
+  File "C:\Users\kurt\Python\kurtain\kurtain\models.py", line 82, in load_user
+    return User.query.get(int(id))
+  File "c:\users\kurt\appdata\local\programs\python\python37\lib\site-packages\sqlalchemy\orm\query.py", line 923, in get
+    ident, loading.load_on_pk_identity)
+  File "c:\users\kurt\appdata\local\programs\python\python37\lib\site-packages\sqlalchemy\orm\query.py", line 1006, in _get_impl
+    return db_load_fn(self, primary_key_identity)
+  File "c:\users\kurt\appdata\local\programs\python\python37\lib\site-packages\sqlalchemy\orm\loading.py", line 250, in load_on_pk_identity
+    return q.one()
+  File "c:\users\kurt\appdata\local\programs\python\python37\lib\site-packages\sqlalchemy\orm\query.py", line 2947, in one
+    ret = self.one_or_none()
+  File "c:\users\kurt\appdata\local\programs\python\python37\lib\site-packages\sqlalchemy\orm\query.py", line 2917, in one_or_none
+    ret = list(self)
+  File "c:\users\kurt\appdata\local\programs\python\python37\lib\site-packages\sqlalchemy\orm\query.py", line 2988, in __iter__
+    return self._execute_and_instances(context)
+  File "c:\users\kurt\appdata\local\programs\python\python37\lib\site-packages\sqlalchemy\orm\query.py", line 3011, in _execute_and_instances
+    result = conn.execute(querycontext.statement, self._params)
+  File "c:\users\kurt\appdata\local\programs\python\python37\lib\site-packages\sqlalchemy\engine\base.py", line 948, in execute
+    return meth(self, multiparams, params)
+  File "c:\users\kurt\appdata\local\programs\python\python37\lib\site-packages\sqlalchemy\sql\elements.py", line 269, in _execute_on_connection
+    return connection._execute_clauseelement(self, multiparams, params)
+  File "c:\users\kurt\appdata\local\programs\python\python37\lib\site-packages\sqlalchemy\engine\base.py", line 1060, in _execute_clauseelement
+    compiled_sql, distilled_params
+  File "c:\users\kurt\appdata\local\programs\python\python37\lib\site-packages\sqlalchemy\engine\base.py", line 1200, in _execute_context
+    context)
+  File "c:\users\kurt\appdata\local\programs\python\python37\lib\site-packages\sqlalchemy\engine\base.py", line 1413, in _handle_dbapi_exception
+    exc_info
+  File "c:\users\kurt\appdata\local\programs\python\python37\lib\site-packages\sqlalchemy\util\compat.py", line 265, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb, cause=cause)
+  File "c:\users\kurt\appdata\local\programs\python\python37\lib\site-packages\sqlalchemy\util\compat.py", line 248, in reraise
     raise value.with_traceback(tb)
-  File "C:\Users\kurt\Python\kurtain\kurtain\templates\index.html", line 1, in top-level template code
-    {% extends "base.html" %}
-  File "C:\Users\kurt\Python\kurtain\kurtain\templates\base.html", line 43, in top-level template code
-    {% block content %}{% endblock %}
-  File "C:\Users\kurt\Python\kurtain\kurtain\templates\index.html", line 20, in block "content"
-    {% for post in posts %}
-TypeError: 'Pagination' object is not iterable
-2018-08-05 19:30:25,357 Kurtain Startup [in C:\Users\kurt\Python\kurtain\kurtain\__init__.py:42]
+  File "c:\users\kurt\appdata\local\programs\python\python37\lib\site-packages\sqlalchemy\engine\base.py", line 1193, in _execute_context
+    context)
+  File "c:\users\kurt\appdata\local\programs\python\python37\lib\site-packages\sqlalchemy\engine\default.py", line 509, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.OperationalError: (sqlite3.OperationalError) no such table: user [SQL: 'SELECT user.id AS user_id, user.username AS user_username, user.email AS user_email, user.password_hash AS user_password_hash, user.about_me AS user_about_me, user.last_seen AS user_last_seen \nFROM user \nWHERE user.id = ?'] [parameters: (2,)] (Background on this error at: http://sqlalche.me/e/e3q8)
